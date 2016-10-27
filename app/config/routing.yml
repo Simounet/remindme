@@ -1,0 +1,3 @@
+simounet_reminde_me:
+    resource: "@SimounetRemindMeBundle/Resources/config/routing.yml"
+    prefix:   /
