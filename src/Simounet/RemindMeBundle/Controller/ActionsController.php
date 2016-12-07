@@ -15,7 +15,9 @@ class ActionsController extends Controller
     public function addAction(Request $request)
     {
         $entries = new Entries();
-        $form = $this->createForm(EntriesType::class, $entries);
+        $form = $this->createForm(EntriesType::class, $entries, array(
+            'action' => $this->generateUrl('simounet_remindme_actions_add')
+        ));
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
