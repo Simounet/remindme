@@ -34,5 +34,13 @@ class EntryController extends Controller
             'form' => $form->createView()
         ));
     }
+
+    public function allAction()
+    {
+        $entryRepository = $this->getDoctrine()->getRepository('SimounetRemindMeBundle:Entry');
+        return $this->render('SimounetRemindMeBundle:Entry:all.html.twig', array(
+            'entries' => $entryRepository->findBy(array(), array('date' => 'DESC'))
+        ));
+    }
 }
 

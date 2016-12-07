@@ -1,0 +1,9 @@
+{% block content %}
+    {% if entries %}
+        <ul>
+            {% for entry in entries %}
+                <li>{{ entry.who }} - {{ entry.what }} - {{ entry.type }} - {{ entry.date|date('d-m-Y') }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

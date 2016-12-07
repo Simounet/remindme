@@ -10,11 +10,5 @@
         </div>
     {% endif %}
     {{ render(controller("SimounetRemindMeBundle:Entry:add")) }}
-    {% if items %}
-        <ul>
-            {% for item in items %}
-                <li>{{ item.who }} - {{ item.what }} - {{ item.type }} - {{ item.date|date('d-m-Y') }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+    {{ render(controller("SimounetRemindMeBundle:Entry:all")) }}
 {% endblock %}
