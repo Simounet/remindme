@@ -10,6 +10,7 @@
             {% endfor %}
         </div>
     {% endif %}
+    {{ render(controller("SimounetRemindMeBundle:Entry:add")) }}
     {% if items %}
         <ul>
             {% for item in items %}
@@ -17,5 +18,4 @@
             {% endfor %}
         </ul>
     {% endif %}
-    {{ render(controller("SimounetRemindMeBundle:Entry:add")) }}
 {% endblock %}

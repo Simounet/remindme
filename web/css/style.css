@@ -1,28 +1,31 @@
 body,
 input,
-select {
+select,
+label {
     font-size: 20px;
+    font-family: sans-serif;
 }
+
 form {
     display: flex;
     justify-content: space-around;
 }
-#simounet_remindmebundle_entries > div {
-    position: relative;
-    margin-bottom: 30px;
-}
+
 label {
     display: block;
-    font-family: sans-serif;
 }
-input {
+
+input,
+.form-date {
     padding: 5px;
     border: 3px solid aliceblue;
     transition: border-color 200ms ease;
 }
+
 input:focus {
     border-color: #000;
 }
+
 button {
     width: 100%;
     padding: 10px;
@@ -30,13 +33,21 @@ button {
     color: white;
     border: none;
 }
+
 button:hover {
     cursor: pointer;
 }
-#simounet_remindmebundle_entries_date > div {
-    display: flex;
-    justify-content: space-between;
-}
+
 select {
     flex-grow: 1;
+}
+
+.form-row {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.form-date {
+    display: flex;
+    justify-content: space-between;
 }

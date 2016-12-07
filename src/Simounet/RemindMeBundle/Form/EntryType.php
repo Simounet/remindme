@@ -33,7 +33,10 @@ class EntryType extends AbstractType
                 )
             ))
             ->add('date', null, array(
-                'label' => 'When'
+                'label' => 'When',
+                'attr' => array(
+                    'class' => 'form-date'
+                )
             ))
             ->add('submit', SubmitType::class);
     }
