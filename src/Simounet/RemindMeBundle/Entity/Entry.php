@@ -128,16 +128,6 @@ class Entry
     }
 
     /**
-     * Gets triggered only on insert
-
-     * @ORM\PrePersist
-     */
-    public function onPrePersist()
-    {
-        $this->date = new \DateTime("now");
-    }
-
-    /**
      * Get date
      *
      * @return \DateTime
