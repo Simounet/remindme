@@ -1,0 +1,20 @@
+{% extends "SimounetRemindMeBundle::base.html.twig" %}
+
+{% block title %}Index{% endblock %}
+{% block content %}
+    Hello World!
+    {% if app.session.flashBag.has('success') %}
+        <div class="alert alert-success">
+            {% for msg in app.session.flashBag.get('success') %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% if items %}
+        <ul>
+            {% for item in items %}
+                <li>{{ item.who }} - {{ item.what }} - {{ item.date|date('d-m-Y') }} - {{ item.type }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

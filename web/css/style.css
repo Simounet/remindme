@@ -1,0 +1,42 @@
+body,
+input,
+select {
+    font-size: 20px;
+}
+form {
+    display: flex;
+    justify-content: space-around;
+}
+#simounet_remindmebundle_entries > div {
+    position: relative;
+    margin-bottom: 30px;
+}
+label {
+    display: block;
+    font-family: sans-serif;
+}
+input {
+    padding: 5px;
+    border: 3px solid aliceblue;
+    transition: border-color 200ms ease;
+}
+input:focus {
+    border-color: #000;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+}
+button:hover {
+    cursor: pointer;
+}
+#simounet_remindmebundle_entries_date > div {
+    display: flex;
+    justify-content: space-between;
+}
+select {
+    flex-grow: 1;
+}
