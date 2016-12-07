@@ -6,23 +6,23 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 use Simounet\RemindMeBundle\Entity\Item;
-use Simounet\RemindMeBundle\Entity\Entries,
-    Simounet\RemindMeBundle\Form\EntriesType;
+use Simounet\RemindMeBundle\Entity\Entry,
+    Simounet\RemindMeBundle\Form\EntryType;
 
 class ActionsController extends Controller
 {
 
     public function addAction(Request $request)
     {
-        $entries = new Entries();
-        $form = $this->createForm(EntriesType::class, $entries, array(
+        $entry = new Entry();
+        $form = $this->createForm(EntryType::class, $entry, array(
             'action' => $this->generateUrl('simounet_remindme_actions_add')
         ));
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($entries);
+            $em->persist($entry);
             $em->flush();
             $request
                 ->getSession()

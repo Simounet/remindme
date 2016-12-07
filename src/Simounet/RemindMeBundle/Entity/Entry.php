@@ -5,13 +5,13 @@ namespace Simounet\RemindMeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Entries
+ * Entry
  *
- * @ORM\Table(name="entries")
- * @ORM\Entity(repositoryClass="Simounet\RemindMeBundle\Repository\EntriesRepository")
+ * @ORM\Table(name="entry")
+ * @ORM\Entity(repositoryClass="Simounet\RemindMeBundle\Repository\EntryRepository")
  * @ORM\HasLifecycleCallbacks
  */
-class Entries
+class Entry
 {
     /**
      * @var int
@@ -37,9 +37,9 @@ class Entries
     private $what;
 
     /**
-     * @var \DateTime
+     * @var \Date
      *
-     * @ORM\Column(name="date", type="datetime")
+     * @ORM\Column(name="date", type="date")
      */
     private $date;
 
@@ -70,7 +70,7 @@ class Entries
      *
      * @param string $who
      *
-     * @return Entries
+     * @return Entry
      */
     public function setWho($who)
     {
@@ -94,7 +94,7 @@ class Entries
      *
      * @param string $what
      *
-     * @return Entries
+     * @return Entry
      */
     public function setWhat($what)
     {
@@ -118,7 +118,7 @@ class Entries
      *
      * @param \DateTime $date
      *
-     * @return Entries
+     * @return Entry
      */
     public function setDate($date)
     {
@@ -152,7 +152,7 @@ class Entries
      *
      * @param string $type
      *
-     * @return Entries
+     * @return Entry
      */
     public function setType($type)
     {

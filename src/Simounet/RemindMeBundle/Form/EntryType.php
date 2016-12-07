@@ -8,7 +8,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-class EntriesType extends AbstractType
+class EntryType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -44,7 +44,7 @@ class EntriesType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Simounet\RemindMeBundle\Entity\Entries'
+            'data_class' => 'Simounet\RemindMeBundle\Entity\Entry'
         ));
     }
 
@@ -53,7 +53,7 @@ class EntriesType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'simounet_remindmebundle_entries';
+        return 'simounet_remindmebundle_entry';
     }
 
 
