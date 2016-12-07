@@ -18,16 +18,16 @@ class EntryType extends AbstractType
         $builder
             ->add('who', TextType::class, array(
                 'attr' => array(
-                    'placeholder' => 'Julie & Simon'
+                    'placeholder' => 'Julie'
                 )
             ))
             ->add('what', TextType::class, array(
                 'attr' => array(
-                    'placeholder' => 'A wedding ring'
+                    'placeholder' => 'A ring'
                 )
             ))
             ->add('type', TextType::class, array(
-                'label' => 'For',
+                'label' => 'Occasion',
                 'attr' => array(
                     'placeholder' => 'Gift'
                 )

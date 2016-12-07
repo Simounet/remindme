@@ -2,7 +2,6 @@
 
 {% block title %}Index{% endblock %}
 {% block content %}
-    Hello World!
     {% if app.session.flashBag.has('success') %}
         <div class="alert alert-success">
             {% for msg in app.session.flashBag.get('success') %}
@@ -14,7 +13,7 @@
     {% if items %}
         <ul>
             {% for item in items %}
-                <li>{{ item.who }} - {{ item.what }} - {{ item.date|date('d-m-Y') }} - {{ item.type }}</li>
+                <li>{{ item.who }} - {{ item.what }} - {{ item.type }} - {{ item.date|date('d-m-Y') }}</li>
             {% endfor %}
         </ul>
     {% endif %}
