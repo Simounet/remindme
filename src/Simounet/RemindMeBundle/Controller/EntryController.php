@@ -16,7 +16,7 @@ class EntryController extends Controller
     {
         $entry = new Entry();
         $form = $this->createForm(EntryType::class, $entry, array(
-            'action' => $this->generateUrl('simounet_remindme_entry_add')
+            'action' => $this->generateUrl('entry_add')
         ));
 
         $form->handleRequest($request);
@@ -28,7 +28,7 @@ class EntryController extends Controller
                 ->getSession()
                 ->getFlashBag()
                 ->add('success', 'Saved');
-            return $this->redirect($this->generateUrl('simounet_remindme_homepage'));
+            return $this->redirect($this->generateUrl('homepage'));
         }
         return $this->render('SimounetRemindMeBundle:Entry:add.html.twig', array(
             'form' => $form->createView()

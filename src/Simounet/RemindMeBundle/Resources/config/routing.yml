@@ -1,7 +1,7 @@
-simounet_remindme_homepage:
+homepage:
     path:     /
     defaults: { _controller: SimounetRemindMeBundle:Default:index }
 
-simounet_remindme_entry_add:
+entry_add:
     path:     /add
     defaults: { _controller: SimounetRemindMeBundle:Entry:add }
