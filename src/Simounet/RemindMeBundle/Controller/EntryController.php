@@ -37,6 +37,24 @@ class EntryController extends Controller
         ));
     }
 
+    public function deleteAction( Request $request, $id )
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entry = $em->getRepository('SimounetRemindMeBundle:Entry')->find($id);
+	if (!$entry) {
+	    throw $this->createNotFoundException(
+		'No entry found for id ' . $id
+	    );
+	}
+	$em->remove($entry);
+	$em->flush();
+	$request
+	    ->getSession()
+	    ->getFlashBag()
+	    ->add('success', 'Removed');
+	return $this->redirect($this->generateUrl('homepage'));
+    }
+
     public function allAction()
     {
         return $this->render('SimounetRemindMeBundle:Entry:all.html.twig', array(

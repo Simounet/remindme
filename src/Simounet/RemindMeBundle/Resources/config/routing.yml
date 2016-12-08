@@ -6,6 +6,10 @@ entry_add:
     path:     /add
     defaults: { _controller: SimounetRemindMeBundle:Entry:add }
 
+entry_delete:
+    path:     /delete/{id}
+    defaults: { _controller: SimounetRemindMeBundle:Entry:delete }
+
 search:
     path:     /search/{field}/{value}
     defaults: { _controller: SimounetRemindMeBundle:Entry:search }

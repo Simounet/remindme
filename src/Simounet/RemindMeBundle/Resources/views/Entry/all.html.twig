@@ -2,7 +2,7 @@
     {% if entries %}
         <ul>
             {% for entry in entries %}
-                <li><a href="{{ path( 'search', { 'field': 'who', 'value': entry.who } ) }}">{{ entry.who }}</a> - {{ entry.what }} - <a href="{{ path( 'search', { 'field': 'type', 'value': entry.type } ) }}">{{ entry.type }}</a> - {{ entry.date|date('d-m-Y') }}</li>
+                <li><a href="{{ path( 'search', { 'field': 'who', 'value': entry.who } ) }}">{{ entry.who }}</a> - {{ entry.what }} - <a href="{{ path( 'search', { 'field': 'type', 'value': entry.type } ) }}">{{ entry.type }}</a> - {{ entry.date|date('d-m-Y') }} - <a href="{{ path('entry_delete', { 'id': entry.id } ) }}">{{ 'Delete'|trans }}</a></li>
             {% endfor %}
         </ul>
     {% endif %}
