@@ -31,7 +31,14 @@ button {
     padding: 10px;
     background-color: black;
     color: white;
-    border: none;
+    border: 3px solid #000;
+}
+
+button:hover,
+button:active,
+button:focus {
+    color: #000;
+    background-color: white;
 }
 
 button:hover {
@@ -40,6 +47,10 @@ button:hover {
 
 select {
     flex-grow: 1;
+}
+
+.inline {
+    display: inline;
 }
 
 .form-row {
@@ -51,3 +62,18 @@ select {
     display: flex;
     justify-content: space-between;
 }
+
+.registration-link {
+    display: block;
+    color: #000;
+    text-align: center;
+    border: 3px solid transparent;
+}
+
+.registration-link:hover,
+.registration-link:active,
+.registration-link:focus {
+    text-decoration: none;
+    border-color: #000;
+}
+

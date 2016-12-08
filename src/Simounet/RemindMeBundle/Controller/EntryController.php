@@ -21,6 +21,8 @@ class EntryController extends Controller
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $user = $this->get('security.token_storage')->getToken()->getUser();
+            $entry->setUserId($user->getId());
             $em = $this->getDoctrine()->getManager();
             $em->persist($entry);
             $em->flush();
@@ -37,9 +39,10 @@ class EntryController extends Controller
 
     public function allAction()
     {
+        $user = $this->get('security.token_storage')->getToken()->getUser();
         $entryRepository = $this->getDoctrine()->getRepository('SimounetRemindMeBundle:Entry');
         return $this->render('SimounetRemindMeBundle:Entry:all.html.twig', array(
-            'entries' => $entryRepository->findBy(array(), array('date' => 'DESC'))
+            'entries' => $entryRepository->findBy(array('userId' => $user->getId()), array('date' => 'DESC'))
         ));
     }
 }

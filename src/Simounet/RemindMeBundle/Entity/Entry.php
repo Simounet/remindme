@@ -9,7 +9,6 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="entry")
  * @ORM\Entity(repositoryClass="Simounet\RemindMeBundle\Repository\EntryRepository")
- * @ORM\HasLifecycleCallbacks
  */
 class Entry
 {
@@ -21,6 +20,13 @@ class Entry
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="user_id", type="integer")
+     */
+    private $userId;
 
     /**
      * @var string
@@ -37,23 +43,24 @@ class Entry
     private $what;
 
     /**
-     * @var \Date
-     *
-     * @ORM\Column(name="date", type="date")
-     */
-    private $date;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="type", type="string", length=255)
      */
     private $type;
 
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="date")
+     */
+    private $date;
+
     public function __construct()
     {
         $this->date = new \DateTime();
     }
+
 
     /**
      * Get id
@@ -63,6 +70,30 @@ class Entry
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set userId
+     *
+     * @param integer $userId
+     *
+     * @return Entry
+     */
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+
+        return $this;
+    }
+
+    /**
+     * Get userId
+     *
+     * @return int
+     */
+    public function getUserId()
+    {
+        return $this->userId;
     }
 
     /**
@@ -114,30 +145,6 @@ class Entry
     }
 
     /**
-     * Set date
-     *
-     * @param \DateTime $date
-     *
-     * @return Entry
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-
-        return $this;
-    }
-
-    /**
-     * Get date
-     *
-     * @return \DateTime
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
      * Set type
      *
      * @param string $type
@@ -159,6 +166,30 @@ class Entry
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Entry
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
     }
 }
 
