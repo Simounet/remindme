@@ -46,3 +46,4 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/$, role: IS_AUTHENTICATED_FULLY }
         - { path: ^/add, role: IS_AUTHENTICATED_FULLY }
+        - { path: ^/search, role: IS_AUTHENTICATED_FULLY }

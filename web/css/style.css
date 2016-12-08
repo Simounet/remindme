@@ -6,6 +6,17 @@ label {
     font-family: sans-serif;
 }
 
+a {
+    color: #000;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: aliceblue;
+    background-color: #000;
+}
+
 form {
     display: flex;
     justify-content: space-around;

@@ -1,0 +1,7 @@
+{% extends "SimounetRemindMeBundle::base.html.twig" %}
+
+{% block title %}{{ 'Search'|trans }}{% endblock %}
+{% block content %}
+    <a href="{{ path( 'homepage' ) }}">{{ 'Go back to the list'|trans }}</a>
+    {% include "SimounetRemindMeBundle:Entry:all.html.twig" with { 'entries': entries } %}
+{% endblock %}

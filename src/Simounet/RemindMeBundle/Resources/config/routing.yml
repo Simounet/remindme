@@ -5,3 +5,7 @@ homepage:
 entry_add:
     path:     /add
     defaults: { _controller: SimounetRemindMeBundle:Entry:add }
+
+search:
+    path:     /search/{field}/{value}
+    defaults: { _controller: SimounetRemindMeBundle:Entry:search }

@@ -39,11 +39,27 @@ class EntryController extends Controller
 
     public function allAction()
     {
+        return $this->render('SimounetRemindMeBundle:Entry:all.html.twig', array(
+            'entries' => $this->search()
+        ));
+    }
+
+    public function searchAction( $field, $value )
+    {
+        return $this->render('SimounetRemindMeBundle:Entry:search.html.twig', array(
+            'entries' => $this->search( array($field => $value) )
+        ));
+    }
+
+    protected function search( $search = array() )
+    {
         $user = $this->get('security.token_storage')->getToken()->getUser();
         $entryRepository = $this->getDoctrine()->getRepository('SimounetRemindMeBundle:Entry');
-        return $this->render('SimounetRemindMeBundle:Entry:all.html.twig', array(
-            'entries' => $entryRepository->findBy(array('userId' => $user->getId()), array('date' => 'DESC'))
-        ));
+        $search = array_merge(
+            array('userId' => $user->getId()),
+            $search
+        );
+        return $entryRepository->findBy($search, array('date' => 'DESC'));
     }
 }
 
