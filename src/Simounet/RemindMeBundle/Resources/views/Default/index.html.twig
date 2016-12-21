@@ -10,5 +10,6 @@
         </div>
     {% endif %}
     {{ render(controller("SimounetRemindMeBundle:Entry:add")) }}
+    <a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, "FOSUserBundle") }}</a>
     {{ render(controller("SimounetRemindMeBundle:Entry:all")) }}
 {% endblock %}
